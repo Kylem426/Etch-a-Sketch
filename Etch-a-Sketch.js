@@ -1,7 +1,7 @@
 const gridContainer = document.getElementById('gridContainer');
 const btnClear = document.getElementById('clear');
 const btnSize = document.getElementById('size');
-const btnReset = document.getElementById('default');
+const btnReset = document.getElementById('reset');
 let trigger = false;
 let defaultSize = 32;
 
@@ -34,18 +34,18 @@ btnClear.onclick = () => {
 }
 
 btnSize.onclick = () => {
-  const myNode = document.getElementById('gridContainer');
-  while (myNode.firstChild) {
-    myNode.removeChild(myNode.lastChild);
+  const gridNode = document.getElementById('gridContainer');
+  while (gridNode.firstChild) {
+    gridNode.removeChild(gridNode.lastChild);
   }
   let size = prompt("How many squares do you want per side?");
   createGrid(size);
 }
 
 btnReset.onclick = () => {
-  const myNode = document.getElementById('gridContainer');
-  while (myNode.firstChild) {
-    myNode.removeChild(myNode.lastChild);
+  const gridNode = document.getElementById('gridContainer');
+  while (gridNode.firstChild) {
+    gridNode.removeChild(gridNode.lastChild);
   }
   createGrid(defaultSize);
 }
